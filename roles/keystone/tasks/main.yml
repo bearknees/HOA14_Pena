@@ -1,0 +1,10 @@
+---
+- name: Install Keystone on Controllers
+  apt:
+    name: keystone
+    state: present
+
+- name: Configure Keystone on Controllers
+  template:
+    src: keystone.conf.j2
+    dest: /etc/keystone/keystone.conf

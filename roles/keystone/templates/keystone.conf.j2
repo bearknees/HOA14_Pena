@@ -1,0 +1,9 @@
+[DEFAULT]
+admin_token = {{ admin_token }}
+debug = {{ debug | default(False) }}
+
+[database]
+connection = {{ keystone_database_connection | default('sqlite:////var/lib/keystone/keystone.db') }}
+
+[identity]
+driver = sql

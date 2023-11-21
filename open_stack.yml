@@ -1,0 +1,24 @@
+---
+- name: OpenStack Installation on Controllers
+  hosts: controllers
+  become: true
+  gather_facts: true
+
+  roles:
+    - keystone
+    - glance
+    - nova
+
+  handlers:
+    - name: Restart Keystone Service
+      service:
+        name: keystone
+        state: restarted
+
+- name: OpenStack Installation on Computes
+  hosts: computes
+  become: true
+  gather_facts: true
+
+  roles:
+    - nova

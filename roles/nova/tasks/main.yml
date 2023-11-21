@@ -1,0 +1,14 @@
+---
+- name: Install Nova on Controllers
+  apt:
+    name:
+      - nova-api
+      - nova-compute
+      - python3-nova
+    state: present
+  become: true
+
+- name: Configure Nova on Controllers
+  template:
+    src: nova.conf.j2
+    dest: /etc/nova/nova.conf

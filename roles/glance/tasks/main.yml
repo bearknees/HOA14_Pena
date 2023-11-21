@@ -1,0 +1,10 @@
+---
+- name: Install Glance on Controllers
+  apt:
+    name: glance
+    state: present
+
+- name: Configure Glance on Controllers
+  template:
+    src: glance.conf.j2
+    dest: /etc/glance/glance.conf

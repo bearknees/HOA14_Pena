@@ -1,0 +1,5 @@
+[controllers]
+192.168.1.9 admin_token=47a64242-b8ed-4dfa-a4d9-6c5ef0a031bc
+
+[computes]
+192.168.1.9
